@@ -24,7 +24,6 @@
 class import_horde_identities extends rcube_plugin {
     public $task = 'login';
 
-    private $log = 'import_horde';
     private $horde_identities = array();
 
     function init() {
@@ -71,7 +70,7 @@ class import_horde_identities extends rcube_plugin {
             $count++;
         }
 
-        write_log($log, "Imported $count Horde identities for $uid");
+        write_log('import_horde_identities', "Imported $count Horde identities for $uid");
         return true;
     }
 
