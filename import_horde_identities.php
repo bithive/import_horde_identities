@@ -102,7 +102,7 @@ class import_horde_identities extends rcube_plugin {
         return array(
             'name'      => $horde_identity['fullname'],
             'email'     => $horde_identity['from_addr'],
-            'reply-to'  => $horde_identity['replyto_addr'],
+            'reply-to'  => empty($horde_identity['replyto_addr']) ? $horde_identity['from_addr'] : $horde_identity['replyto_addr'],
             'signature' => $horde_identity['signature']
         );
     }
